@@ -13,8 +13,14 @@ jobs:
       packages: read
     steps:
       - uses: actions/checkout@v3
-      - run: yarn install --frozen-lockfile
-      - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> /.npmrc
+      - uses: actions/setup-node@v3
+        name: setup-Node18
+        with:
+          node-version: '18.x'
+          cache: yarn
+      - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
+
+      - run: yarn install --frozen-lockfile
+            
