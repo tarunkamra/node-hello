@@ -1,7 +1,7 @@
 {
-  "name": "node-hello",
+  "name": "@sourcedigital/hello",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple node.js app that servers \"hello world\"",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

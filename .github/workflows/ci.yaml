@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '18.x'
           
-      - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
+      - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> $HOME/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
