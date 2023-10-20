@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile
-      - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> /root/.npmrc
+      - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> /.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
