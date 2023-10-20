@@ -17,7 +17,7 @@ jobs:
         name: setup-Node18
         with:
           node-version: '18.x'
-          cache: yarn
+          
       - run: echo "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
